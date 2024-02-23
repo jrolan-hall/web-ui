@@ -1,0 +1,15 @@
+FROM node:20
+ENV NODE_VERSION 20
+
+WORKDIR /app
+
+COPY package.json ./
+COPY package-lock.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 9002
+
+CMD ["npm", "start"]

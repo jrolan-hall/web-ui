@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoadingPage from "./pages/loading/LoadingPage";
 import HomePage from "./pages/home/HomePage";
 import NotFoundPage from "./pages/error/NotFoundPage";
-import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
+import Footer from "./components/navigation/Footer";
+import NavBar from "./components/navigation/NavBar";
+import JobsPage from "./pages/jobs/JobsPage";
 
 interface AppProps {}
 
@@ -18,6 +19,7 @@ class App extends Component<AppProps> {
             <Router>
               <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/jobs" element={<JobsPage />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </Router>

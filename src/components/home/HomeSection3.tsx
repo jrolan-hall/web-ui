@@ -1,7 +1,7 @@
 import { Component } from "react";
 import {
   Stack,
-  Text,
+  Text, Box, Card, CardBody, Image
 } from '@chakra-ui/react'
 
 interface HomeSection3Props {}
@@ -10,6 +10,7 @@ class HomeSection3 extends Component<HomeSection3Props> {
 
   render = () => {
     return (
+      <>
       <Stack
         p={10}
         pl={{ base: 10, lg: 20}}
@@ -20,6 +21,27 @@ class HomeSection3 extends Component<HomeSection3Props> {
         <Text fontSize={25} fontWeight="bold" color="gray.700">Real-time tracking,</Text>
         <Text fontSize={25} fontWeight="bold" color="#F7941D">every step of the way.</Text>
       </Stack>
+        <Box align='center'>
+        <Card maxW='md' 
+            style={{
+              borderRadius: 25,
+              backgroundColor: 'rgba(255, 255, 255, 0.9)',
+              backdropFilter: 'blur(10px)',
+              boxShadow: "0 4px 16px rgba(0, 0, 0, 0.2)"
+            }}        
+        >
+          <CardBody>
+            <Image
+              src="/assets/images/home-section-3.png"
+              alt="home-section-1"
+              h="400px"
+              w="400px"
+              borderRadius={15}
+            /> 
+          </CardBody>
+        </Card>
+        </Box>
+        </>
     )
   }
 }

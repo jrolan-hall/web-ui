@@ -9,7 +9,7 @@ import {
   Image
 } from '@chakra-ui/react'
 import { FaFacebook, FaInstagram, FaPhone, FaRegEnvelope, FaTiktok, FaTwitter, FaWhatsapp } from 'react-icons/fa'
-import SocialButton from './SocialButton'
+import SocialButton from '../global/SocialButton'
 
 
 const Logo = (props: any) => {
@@ -73,7 +73,11 @@ export default function Footer() {
             justify={{ base: 'center', md: 'space-between' }}
             align={{ base: 'center', md: 'center' }}
           >
-            <Text>© {currentYear} Showfa Express Limited. All rights reserved</Text>
+            <Stack direction={'column'}>
+              <Text>Jamaica</Text>
+              <Text>(876) 485-6559</Text>
+              <Text>hello@goshowfa.com</Text>
+            </Stack>
             <Stack direction={'row'} spacing={6}>
               <SocialButton label={'Phone'} href={'tel:+18764856559'}>
                 <FaPhone />
@@ -97,6 +101,7 @@ export default function Footer() {
                 <FaWhatsapp />
               </SocialButton>
             </Stack>
+            <Text>© {currentYear} Showfa Express Limited. All rights reserved</Text>
           </Container>
         </Box>
       </Box>

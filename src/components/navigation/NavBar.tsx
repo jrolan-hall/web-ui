@@ -16,6 +16,7 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Link,
 } from '@chakra-ui/react'
 import {
   HamburgerIcon,
@@ -23,7 +24,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons'
-import OrderModal from './OrderModal'
+import OrderModal from '../global/OrderModal'
 
 const NavBar = () => {
   const { isOpen, onToggle } = useDisclosure()
@@ -61,12 +62,14 @@ const NavBar = () => {
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
+            <Link href='/'>
             <Image
               src="/assets/images/showfa-logo-mini.png"
               alt="Showfa Logo"
               h="30px"
               w="auto"
             /> 
+            </Link>
           </Text>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -79,6 +82,16 @@ const NavBar = () => {
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
+          <Button 
+            as={'a'} 
+            fontSize={'sm'} 
+            fontWeight={600}  
+            color={'black'} 
+            href={'#'} 
+            variant={"ghost"}
+          >
+            <Link href={'/jobs'}>Jobs</Link>
+          </Button>
           <Button 
             as={'a'} 
             fontSize={'sm'} 
